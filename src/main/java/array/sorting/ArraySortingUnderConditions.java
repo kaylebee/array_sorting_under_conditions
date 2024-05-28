@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 /**
- * The ArraySortingUnderConditions class contains the main method which sorts an array based on certain conditions.
+ * MostFrequentNumbersFinder class contains the main method which sorts an array based on certain conditions.
  */
 public class ArraySortingUnderConditions
 {
@@ -37,6 +37,10 @@ public class ArraySortingUnderConditions
      * @return Sorted array
      */
     public static Integer[] sortArray(Integer[] array) {
+        if (array == null) {
+            throw new IllegalArgumentException("Input array cannot be null");
+        }
+
         return Arrays.stream(array)
                 .sorted((o1, o2) -> {
                     if (o1 % 2 != 0 && o2 % 2 != 0) {

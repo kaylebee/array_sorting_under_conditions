@@ -60,4 +60,14 @@ public class ArraySortingUnderConditionsTest
         Integer[] expectedArray = {-5, -3, -1, 0, 4, 2};
         assertArrayEquals(expectedArray, ArraySortingUnderConditions.sortArray(array));
     }
+
+    @Test
+    public void testSortArrayWithEmptyArray() {
+        Integer[] array = null;
+        try {
+            ArraySortingUnderConditions.sortArray(array);
+        } catch (IllegalArgumentException e) {
+            assertEquals("Input array cannot be null", e.getMessage());
+        }
+    }
 }
